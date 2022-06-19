@@ -102,4 +102,4 @@ I will continue to work on this as my skills increase. I would like to make this
 ## Author
 
 -   Website - [Charles Miller](https://www.charlesmiller.dev)
--   Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/charlesmiller0412)
+-   Frontend Mentor - [@charlesmiller0412](https://www.frontendmentor.io/profile/charlesmiller0412)
