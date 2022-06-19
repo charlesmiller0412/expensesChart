@@ -1,0 +1,142 @@
+/* positioning */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    font-size: 18px;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 400;
+}
+
+.container-fluid {
+    background-color: hsl(27, 66%, 92%);
+}
+
+#app {
+    height: 100vh;
+    max-width: 540px;
+}
+
+/* text */
+
+.smallerText {
+    font-size: 1rem;
+    font-weight: 400;
+    color: hsl(28, 10%, 53%);
+}
+
+.largeText {
+    font-weight: 700;
+}
+
+.largerText {
+    font-weight: 700;
+}
+
+#text__top .largeText {
+    filter: drop-shadow(0 4px 4px hsla(25, 47%, 15%, 0.25));
+    color: hsl(25, 47%, 15%);
+    line-height: 3.45rem;
+}
+
+#text__bottom .largerText {
+    font-size: 2.3rem;
+    line-height: 2.5rem;
+}
+
+/* sections */
+
+#balance {
+    background-color: hsl(10, 79%, 65%);
+    color: #fff;
+    border-radius: 1.1rem;
+    padding: 2rem 2.5rem;
+}
+
+#spending {
+    background-color: hsl(33, 100%, 98%);
+    border-radius: 1.8rem;
+    padding: 2rem 2.5rem;
+}
+
+#chartSection .col-1 .row :first-of-type {
+    margin: 1rem auto 0.4rem auto;
+    filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+#chartSection .col-1 .row :first-of-type:hover {
+    background-color: #ff9b86;
+}
+
+#chartSection .bar {
+    background-color: hsl(10, 79%, 65%);
+    border-radius: 5px;
+    width: 3.3rem;
+}
+
+.dataHover {
+    background-color: hsl(25, 47%, 15%);
+    color: hsl(33, 100%, 98%);
+    border-radius: 5px;
+    height: 2.2rem;
+    display: flex;
+    justify-content: center;
+    filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+    font-weight: 400;
+    align-items: center;
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+.underline {
+    border: 1px solid hsl(27, 66%, 92%);
+}
+
+.bottom__text-right {
+    text-align: end;
+}
+
+.attribution {
+    position: absolute;
+    bottom: 0;
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+@media screen and (max-width: 500px) {
+    body {
+        margin-top: 0;
+        padding-top: 0;
+    }
+
+    .smallerText {
+        font-size: 0.8rem;
+    }
+
+    #balance {
+        padding: 1.5rem;
+    }
+
+    #chartSection .bar {
+        background-color: hsl(10, 79%, 65%);
+        border-radius: 5px;
+        width: 2rem;
+    }
+
+    .dataHover {
+        font-size: 0.7rem;
+        padding: 0;
+    }
+
+    #spending {
+        padding: 1rem 2rem;
+    }
+}

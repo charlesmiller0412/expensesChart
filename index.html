@@ -1,43 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- displays site properly based on user's device -->
+        <!-- font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap"
+            rel="stylesheet"
+        />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Expenses chart component</title>
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./images/favicon-32x32.png"
+        />
+        <link rel="stylesheet" href="style.css" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
+        <title>charlesmiller.dev | Expense Chart Project</title>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    </head>
+    <body onload="activeDayHover()">
+        <div class="container-fluid d-flex justify-content-center">
+            <div class="row w-100 align-content-center justify-content-center" id="app">
+                <div class="row">
+                    <div class="col-12 d-flex justify-content-between" id="balance">
+                        <div class="col-4">
+                            <div>My Balance</div>
+                            <div class="largeText fs-3" id="balanceAmount">$921.48</div>
+                        </div>
+                        <div class="align-self-center">
+                            <img src="./images/logo.svg" alt="logo">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 mt-4" id="spending">
+                        <div id="text__top">
+                            <div class="largeText fs-3" style="color: hsl(25, 47%, 15%)">Spending - Last 7 days</div>
+                        </div>
+                        <div id="chartSection" class="d-flex justify-content-between align-items-end">
+                            <div class="col-1">
+                                <div class="row"><span class="dataHover">$17.45</span><div class="bar" id="0" style="height: 50.0815px;"></div></div>
+                                <div class="row justify-content-center smallerText mt-2 day">mon</div>
+                            </div>
+                            <div class="col-1">
+                                <div class="row"><span class="dataHover">$34.91</span><div class="bar" id="1" style="height: 100.192px;"></div></div>
+                                <div class="row justify-content-center smallerText mt-2 day">tue</div>
+                            </div>
+                            <div class="col-1">
+                                <div class="row"><span class="dataHover" style="opacity: 0;">$52.36</span><div class="bar" id="2" style="height: 150.273px;"></div></div>
+                                <div class="row justify-content-center smallerText mt-2 day">wed</div>
+                            </div>
+                            <div class="col-1">
+                                <div class="row"><span class="dataHover">$31.07</span><div class="bar" id="3" style="height: 89.1709px;"></div></div>
+                                <div class="row justify-content-center smallerText mt-2 day">thu</div>
+                            </div>
+                            <div class="col-1">
+                                <div class="row"><span class="dataHover">$23.39</span><div class="bar" id="4" style="height: 67.1293px;"></div></div>
+                                <div class="row justify-content-center smallerText mt-2 day">fri</div>
+                            </div>
+                            <div class="col-1">
+                                <div class="row"><span class="dataHover">$43.28</span><div class="bar" id="5" style="height: 124.214px;"></div></div>
+                                <div class="row justify-content-center smallerText mt-2 day">sat</div>
+                            </div>
+                            <div class="col-1">
+                                <div class="row"><span class="dataHover">$25.48</span><div class="bar" id="6" style="height: 73.1276px;"></div></div>
+                                <div class="row justify-content-center smallerText mt-2 day">sun</div>
+                            </div>
+                        </div>
+                        <div class="underline my-4"></div>
+                        <div id="text__bottom" class="d-flex justify-content-between">
+                            <div class="col-4">
+                                <div class="row smallerText" style="line-height: 23px">Total this month</div>
+                                <div class="row largerText" id="totalAmount">$227.94</div>
+                            </div>
+                            <div class="col-4 align-self-end mb-1 w-50">
+                                <div class="row"><span class="text-end smallerText" style="color: hsl(25, 47%, 15%)"><strong id="increaseAmount">+24.7%</strong></span></div>
+                                <div class="row"><span class="text-end smallerText">from last month</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="attribution">
+                    Challenge by
+                    <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a href="#">Charles Miller</a>.
+                </div>
+            </div>
+        </div>
+        
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+        <script type="text/javascript">
 
-  My balance
-  $921.48
+            var xmlhttp = new XMLHttpRequest();
+            var myObj = [];
 
-  Spending - Last 7 days
+            // set global classes
+            var totalAmount = 0;
+            var balanceAmount = 921.48;
+            const bars = document.getElementsByClassName("bar");
+            const days = document.getElementsByClassName("day");
+            const currentDay = "";
 
-  mon
-  tue
-  wed
-  thu
-  fri
-  sat
-  sun
+            const dataHover = document.getElementsByClassName("dataHover");
 
-  Total this month
-  $478.33
+            // get day of week
+            const d = new Date;
+            const dayOfWeek = bars[d.getDay()];
 
-  +2.4%
-  from last month
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+            // read and extract json from file
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    myObj = JSON.parse(this.responseText);
+                    for (let i = 0; i < bars.length; i++) {
+                        totalAmount += myObj[i].amount;
+                        bars[i].style.height = myObj[i].amount * 2.87 + "px";
+                        days[i].innerHTML = myObj[i].day;
+                        dataHover[i].innerHTML = "$" + myObj[i].amount;
+                    }
+                    dayOfWeek.style.backgroundColor = "hsl(186, 34%, 60%)";
+                    $("#totalAmount").html("$" + totalAmount);
+                    var increaseAmount =  (totalAmount / balanceAmount) * 100;
+                    $("#increaseAmount").html("+" + increaseAmount.toFixed(1) + "%");
+                }
+            };
+            xmlhttp.open("GET", "./data.json", true);
+            xmlhttp.send();
+
+            // hover function
+            function activeDayHover() {
+
+                dayOfWeek.onmouseenter = function() {
+                    dayOfWeek.style.backgroundColor = "#B4E0E5";
+                }
+
+                dayOfWeek.onmouseout = function() {
+                    dayOfWeek.style.backgroundColor = "hsl(186, 34%, 60%)";
+                }
+
+                $(".bar").mouseenter(function() {
+                    document.getElementsByClassName("dataHover")[this.id].style.opacity = 1;
+                });
+
+                $(".bar").mouseout(function() {
+                    document.getElementsByClassName("dataHover")[this.id].style.opacity = 0;
+                });
+            }
+        </script>
+    </body>
 </html>
