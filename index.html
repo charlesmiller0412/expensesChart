@@ -19,83 +19,215 @@
             href="./images/favicon-32x32.png"
         />
         <link rel="stylesheet" href="style.css" />
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+            crossorigin="anonymous"
+        />
         <title>charlesmiller.dev | Expense Chart Project</title>
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script
+            src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"
+        ></script>
     </head>
     <body onload="activeDayHover()">
-        <div class="container-fluid d-flex justify-content-center">
-            <div class="row w-100 align-content-center justify-content-center" id="app">
+        <main class="container-fluid d-flex justify-content-center">
+            <div
+                class="row w-100 align-content-center justify-content-center"
+                id="app"
+            >
                 <div class="row">
-                    <div class="col-12 d-flex justify-content-between" id="balance">
+                    <div
+                        class="col-12 d-flex justify-content-between"
+                        id="balance"
+                    >
                         <div class="col-4">
                             <div>My Balance</div>
-                            <div class="largeText fs-3" id="balanceAmount">$921.48</div>
+                            <div class="largeText fs-3" id="balanceAmount">
+                                $921.48
+                            </div>
                         </div>
                         <div class="align-self-center">
-                            <img src="./images/logo.svg" alt="logo">
+                            <img src="./images/logo.svg" alt="logo" />
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-12 mt-4" id="spending">
                         <div id="text__top">
-                            <div class="largeText fs-3" style="color: hsl(25, 47%, 15%)">Spending - Last 7 days</div>
+                            <div
+                                class="largeText fs-3"
+                                style="color: hsl(25, 47%, 15%)"
+                            >
+                                Spending - Last 7 days
+                            </div>
                         </div>
-                        <div id="chartSection" class="d-flex justify-content-between align-items-end">
+                        <div
+                            id="chartSection"
+                            class="d-flex justify-content-between align-items-end"
+                        >
                             <div class="col-1">
-                                <div class="row"><span class="dataHover">$17.45</span><div class="bar" id="0" style="height: 50.0815px;"></div></div>
-                                <div class="row justify-content-center smallerText mt-2 day">mon</div>
+                                <div class="row">
+                                    <span class="dataHover">$17.45</span>
+                                    <div
+                                        class="bar"
+                                        id="0"
+                                        style="height: 50.0815px"
+                                    ></div>
+                                </div>
+                                <div
+                                    class="row justify-content-center smallerText mt-2 day"
+                                >
+                                    mon
+                                </div>
                             </div>
                             <div class="col-1">
-                                <div class="row"><span class="dataHover">$34.91</span><div class="bar" id="1" style="height: 100.192px;"></div></div>
-                                <div class="row justify-content-center smallerText mt-2 day">tue</div>
+                                <div class="row">
+                                    <span class="dataHover">$34.91</span>
+                                    <div
+                                        class="bar"
+                                        id="1"
+                                        style="height: 100.192px"
+                                    ></div>
+                                </div>
+                                <div
+                                    class="row justify-content-center smallerText mt-2 day"
+                                >
+                                    tue
+                                </div>
                             </div>
                             <div class="col-1">
-                                <div class="row"><span class="dataHover" style="opacity: 0;">$52.36</span><div class="bar" id="2" style="height: 150.273px;"></div></div>
-                                <div class="row justify-content-center smallerText mt-2 day">wed</div>
+                                <div class="row">
+                                    <span class="dataHover" style="opacity: 0"
+                                        >$52.36</span
+                                    >
+                                    <div
+                                        class="bar"
+                                        id="2"
+                                        style="height: 150.273px"
+                                    ></div>
+                                </div>
+                                <div
+                                    class="row justify-content-center smallerText mt-2 day"
+                                >
+                                    wed
+                                </div>
                             </div>
                             <div class="col-1">
-                                <div class="row"><span class="dataHover">$31.07</span><div class="bar" id="3" style="height: 89.1709px;"></div></div>
-                                <div class="row justify-content-center smallerText mt-2 day">thu</div>
+                                <div class="row">
+                                    <span class="dataHover">$31.07</span>
+                                    <div
+                                        class="bar"
+                                        id="3"
+                                        style="height: 89.1709px"
+                                    ></div>
+                                </div>
+                                <div
+                                    class="row justify-content-center smallerText mt-2 day"
+                                >
+                                    thu
+                                </div>
                             </div>
                             <div class="col-1">
-                                <div class="row"><span class="dataHover">$23.39</span><div class="bar" id="4" style="height: 67.1293px;"></div></div>
-                                <div class="row justify-content-center smallerText mt-2 day">fri</div>
+                                <div class="row">
+                                    <span class="dataHover">$23.39</span>
+                                    <div
+                                        class="bar"
+                                        id="4"
+                                        style="height: 67.1293px"
+                                    ></div>
+                                </div>
+                                <div
+                                    class="row justify-content-center smallerText mt-2 day"
+                                >
+                                    fri
+                                </div>
                             </div>
                             <div class="col-1">
-                                <div class="row"><span class="dataHover">$43.28</span><div class="bar" id="5" style="height: 124.214px;"></div></div>
-                                <div class="row justify-content-center smallerText mt-2 day">sat</div>
+                                <div class="row">
+                                    <span class="dataHover">$43.28</span>
+                                    <div
+                                        class="bar"
+                                        id="5"
+                                        style="height: 124.214px"
+                                    ></div>
+                                </div>
+                                <div
+                                    class="row justify-content-center smallerText mt-2 day"
+                                >
+                                    sat
+                                </div>
                             </div>
                             <div class="col-1">
-                                <div class="row"><span class="dataHover">$25.48</span><div class="bar" id="6" style="height: 73.1276px;"></div></div>
-                                <div class="row justify-content-center smallerText mt-2 day">sun</div>
+                                <div class="row">
+                                    <span class="dataHover">$25.48</span>
+                                    <div
+                                        class="bar"
+                                        id="6"
+                                        style="height: 73.1276px"
+                                    ></div>
+                                </div>
+                                <div
+                                    class="row justify-content-center smallerText mt-2 day"
+                                >
+                                    sun
+                                </div>
                             </div>
                         </div>
                         <div class="underline my-4"></div>
-                        <div id="text__bottom" class="d-flex justify-content-between">
+                        <div
+                            id="text__bottom"
+                            class="d-flex justify-content-between"
+                        >
                             <div class="col-4">
-                                <div class="row smallerText" style="line-height: 23px">Total this month</div>
-                                <div class="row largerText" id="totalAmount">$227.94</div>
+                                <div
+                                    class="row smallerText"
+                                    style="line-height: 23px"
+                                >
+                                    Total this month
+                                </div>
+                                <div class="row largerText" id="totalAmount">
+                                    $227.94
+                                </div>
                             </div>
                             <div class="col-4 align-self-end mb-1 w-50">
-                                <div class="row"><span class="text-end smallerText" style="color: hsl(25, 47%, 15%)"><strong id="increaseAmount">+24.7%</strong></span></div>
-                                <div class="row"><span class="text-end smallerText">from last month</span></div>
+                                <div class="row">
+                                    <span
+                                        class="text-end smallerText"
+                                        style="color: hsl(25, 47%, 15%)"
+                                        ><strong id="increaseAmount"
+                                            >+24.7%</strong
+                                        ></span
+                                    >
+                                </div>
+                                <div class="row">
+                                    <span class="text-end smallerText"
+                                        >from last month</span
+                                    >
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="attribution">
                     Challenge by
-                    <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a href="#">Charles Miller</a>.
+                    <a
+                        href="https://www.frontendmentor.io?ref=challenge"
+                        target="_blank"
+                        >Frontend Mentor</a
+                    >. Coded by <a href="#">Charles Miller</a>.
                 </div>
             </div>
-        </div>
-        
+        </main>
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-        <script type="text/javascript">
-
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+            crossorigin="anonymous"
+        ></script>
+        <script>
             var xmlhttp = new XMLHttpRequest();
             var myObj = [];
 
@@ -109,11 +241,11 @@
             const dataHover = document.getElementsByClassName("dataHover");
 
             // get day of week
-            const d = new Date;
+            const d = new Date();
             const dayOfWeek = bars[d.getDay()];
 
             // read and extract json from file
-            xmlhttp.onreadystatechange = function() {
+            xmlhttp.onreadystatechange = function () {
                 if (this.readyState == 4 && this.status == 200) {
                     myObj = JSON.parse(this.responseText);
                     for (let i = 0; i < bars.length; i++) {
@@ -124,8 +256,10 @@
                     }
                     dayOfWeek.style.backgroundColor = "hsl(186, 34%, 60%)";
                     $("#totalAmount").html("$" + totalAmount);
-                    var increaseAmount =  (totalAmount / balanceAmount) * 100;
-                    $("#increaseAmount").html("+" + increaseAmount.toFixed(1) + "%");
+                    var increaseAmount = (totalAmount / balanceAmount) * 100;
+                    $("#increaseAmount").html(
+                        "+" + increaseAmount.toFixed(1) + "%"
+                    );
                 }
             };
             xmlhttp.open("GET", "./data.json", true);
@@ -133,21 +267,24 @@
 
             // hover function
             function activeDayHover() {
-
-                dayOfWeek.onmouseenter = function() {
+                dayOfWeek.onmouseenter = function () {
                     dayOfWeek.style.backgroundColor = "#B4E0E5";
-                }
+                };
 
-                dayOfWeek.onmouseout = function() {
+                dayOfWeek.onmouseout = function () {
                     dayOfWeek.style.backgroundColor = "hsl(186, 34%, 60%)";
-                }
+                };
 
-                $(".bar").mouseenter(function() {
-                    document.getElementsByClassName("dataHover")[this.id].style.opacity = 1;
+                $(".bar").mouseenter(function () {
+                    document.getElementsByClassName("dataHover")[
+                        this.id
+                    ].style.opacity = 1;
                 });
 
-                $(".bar").mouseout(function() {
-                    document.getElementsByClassName("dataHover")[this.id].style.opacity = 0;
+                $(".bar").mouseout(function () {
+                    document.getElementsByClassName("dataHover")[
+                        this.id
+                    ].style.opacity = 0;
                 });
             }
         </script>
