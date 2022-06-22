@@ -242,7 +242,16 @@
 
             // get day of week
             const d = new Date();
-            const dayOfWeek = bars[d.getDay()];
+            var dayOfWeek;
+
+            // get current day of week
+            if (d.getDay() == 0) {
+                dayOfWeek = bars[6];
+            } else if (d.getDay() > 1) {
+                dayOfWeek = bars[d.getDay() - 1];
+            } else {
+                dayOfWeek = bars[d.getDay()];
+            }
 
             // read and extract json from file
             xmlhttp.onreadystatechange = function () {
